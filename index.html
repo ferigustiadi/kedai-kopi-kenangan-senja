@@ -29,7 +29,14 @@
     ></script>
 
     <!-- App -->
-    <script src="src/app.js"></script>
+    <script src="src/app.js" async></script>
+
+    <!-- Midtrans -->
+    <script
+      type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-z4fDWvPMGOIpp4eq"
+    ></script>
   </head>
   <body>
     <!-- Navbar start -->
@@ -92,6 +99,12 @@
 
         <div class="form-container" x-show="$store.cart.items.length">
           <form action="" id="checkoutForm">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="$store.cart.total" />
             <h5>Customer Detail</h5>
 
             <label for="name">
@@ -110,7 +123,7 @@
             </label>
 
             <button
-              class="chekout-button"
+              class="chekout-button disabled"
               type="submit"
               id="chekout-button"
               value="checkout"
