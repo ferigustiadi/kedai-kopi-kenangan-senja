@@ -11,6 +11,12 @@ document.addEventListener("alpine:init", () => {
         img: "bijicoffe5.jpg",
         price: 40000,
       },
+      {
+        id: 6,
+        name: "Arabica Ijen",
+        img: "bijicoffe6.jpg",
+        price: 45000,
+      },
     ],
   }));
 
